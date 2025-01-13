@@ -10,6 +10,7 @@ public class PLayerController : MonoBehaviour
     private int currentHealth;
 
     public Slider healthSlider; // Reference to the health slider
+
     // Start is called before the first frame update
     void Start()
     {
