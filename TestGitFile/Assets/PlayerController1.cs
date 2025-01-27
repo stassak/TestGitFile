@@ -1,11 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
-using UnityEngine.UI;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.InputSystem;
 
 
-public class PLayerController : MonoBehaviour
+public class PlayerController1 : MonoBehaviour
 {
     public CharacterController controller; // Reference to the CharacterController
     public float speed = 10f; // Movement speed
