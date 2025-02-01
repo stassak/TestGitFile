@@ -26,6 +26,8 @@ public class PlayerController : MonoBehaviour
 
     void Start()
     {
+        Debug.Log("Start() function has been called!");
+        Debug.LogError("This is a test error!");
         currentHealth = maxHealth;
 
         if (healthBar != null)
@@ -78,6 +80,15 @@ public class PlayerController : MonoBehaviour
         // Gravity
         velocity.y += gravity * Time.deltaTime;
         controller.Move(velocity * Time.deltaTime);
+
+        Debug.Log("Update is running..."); // Should print every frame
+
+
+        // Press 'T' to simulate taking damage
+        if (Input.GetKeyDown(KeyCode.T))
+        {
+            TakeDamage(20);
+        }
     }
 
     public void TakeDamage(int damage)
