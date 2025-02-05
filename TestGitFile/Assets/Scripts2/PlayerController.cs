@@ -81,9 +81,17 @@ public class PlayerController : MonoBehaviour
         velocity.y += gravity * Time.deltaTime;
         controller.Move(velocity * Time.deltaTime);
 
+        if (Input.GetKeyDown(KeyCode.H))
+        {
+            Healing(10);
+        }
+
         Debug.Log("Update is running..."); // Should print every frame
 
-
+        if (currentHealth > maxHealth)
+        {
+            currentHealth = maxHealth;
+        }
         // Press 'T' to simulate taking damage
         if (Input.GetKeyDown(KeyCode.T))
         {
@@ -107,9 +115,24 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    
+
+    public void Healing(int heal)
+    {
+        Debug.Log("Its A health");
+        currentHealth += heal;
+        currentHealth = Mathf.Clamp(currentHealth, 0, maxHealth);
+
+        if (healthBar != null)
+        {
+            healthBar.value = currentHealth;
+        }
+            
+    }
     private void Die()
     {
         Debug.Log("Player has died!");
         // Add additional death logic here
     }
+
 }

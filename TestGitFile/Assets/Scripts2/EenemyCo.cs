@@ -14,7 +14,7 @@ public class EenemyCo : MonoBehaviour
 
     void Update()
     {
-        // Move towards the player
+        // Move towards the playerwwwwwwwwwwwwwwww
         if (player != null)
         {
             float distance = Vector3.Distance(transform.position, player.position);
