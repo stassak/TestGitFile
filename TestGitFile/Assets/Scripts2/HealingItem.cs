@@ -5,19 +5,11 @@ using UnityEngine;
 public class HealingItem : MonoBehaviour
 {
     public Transform player;
-    // public float healAmount = 10;
-    public int heal = 10;
+    
+    // Amount of health restored
+   // public int heal = 10;
 
-   /* private void HealPlayer()
-    {
-        Debug.Log("Player healing!!!!!");
-
-        PlayerController playerController = player.GetComponent<PlayerController>();
-        if (playerController != null)
-        {
-            playerController.Healing(heal);
-        }
-    }*/
+  
 
     private void OnTriggerEnter(Collider other)
     {
@@ -27,4 +19,20 @@ public class HealingItem : MonoBehaviour
             Destroy(gameObject);
         }
     }
+
+
+   /* private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            PlayerController playerController = other.GetComponent<PlayerController>();
+
+            if (playerController != null)
+            {
+                playerController.Healing(heal); // Heal the player
+                Debug.Log("Player healed by " + heal + " points!");
+                Destroy(gameObject); // Remove the healing item after use
+            }
+        }
+    }*/
 }
