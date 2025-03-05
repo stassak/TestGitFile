@@ -6,6 +6,11 @@ public class SpawnManager : MonoBehaviour
 {
     public GameObject[] spawnGameObjects;
 
+    private float spawnRangePosX = 10;
+    private float spawnPosZ = 20;
+
+    private float startDelay = 1;
+    private float spawnInterval = 2;
     // Start is called before the first frame update
     void Start()
     {
@@ -21,5 +26,13 @@ public class SpawnManager : MonoBehaviour
         {
             Instantiate(spawnGameObjects[objectIndex],new Vector3(0,0,0) ,spawnGameObjects[objectIndex].transform.rotation);
         }
+    }
+
+    void SpawnRandomObjects()
+    {
+        int enemyIndex = Random.Range(0, spawnGameObjects.Length);
+        Vector3 spawnPos = new Vector3(Random.Range(-spawnRangePosX, spawnRangePosX), 1.5f, spawnPosZ);
+
+        Instantiate(spawnGameObjects[enemyIndex], spawnPos, spawnGameObjects[enemyIndex].transform.rotation);
     }
 }
