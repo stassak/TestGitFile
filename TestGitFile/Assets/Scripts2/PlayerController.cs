@@ -24,6 +24,8 @@ public class PlayerController : MonoBehaviour
     InputAction movement;
     InputAction jump;
 
+    public GameObject projectilePref;
+
     void Start()
     {
         Debug.Log("Start() function has been called!");
@@ -57,6 +59,11 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            Instantiate(projectilePref, transform.position, projectilePref.transform.rotation);
+        }
+
         // Movement Input
         Vector2 input = movement.ReadValue<Vector2>();
         Vector3 move = transform.right * input.x + transform.forward * input.y;
