@@ -25,6 +25,7 @@ public class PlayerController : MonoBehaviour
     InputAction jump;
 
     public GameObject projectilePref;
+    public Transform projectilePoint;
 
     void Start()
     {
@@ -61,7 +62,7 @@ public class PlayerController : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            Instantiate(projectilePref, transform.position, projectilePref.transform.rotation);
+            Instantiate(projectilePref, projectilePoint.position, projectilePref.transform.rotation);
         }
 
         // Movement Input
