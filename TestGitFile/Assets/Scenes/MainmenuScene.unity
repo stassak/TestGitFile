@@ -297,6 +297,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea4dc59e991713343b0d2ceb20999aa7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pauseMenuScreen: {fileID: 0}
+  gameOverText: {fileID: 0}
 --- !u!4 &239762697
 Transform:
   m_ObjectHideFlags: 0
@@ -844,7 +846,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1568455089}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 11500000, guid: ea4dc59e991713343b0d2ceb20999aa7, type: 3}
+        m_TargetAssemblyTypeName: 
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1568455089
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1583,7 +1597,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1989636903}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 11500000, guid: ef9b1ac0be17080438daa455307df188, type: 3}
+        m_TargetAssemblyTypeName: 
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1989636903
 MonoBehaviour:
   m_ObjectHideFlags: 0
