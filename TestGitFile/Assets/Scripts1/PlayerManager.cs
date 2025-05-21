@@ -46,6 +46,22 @@ public class PlayerManager : MonoBehaviour
     public void GameOver()
     {
         gameOverText.gameObject.SetActive(true);
+        //adding to do freeze of the logic player and sounds
+        if (isGameOver) return;
+        gameOverText.gameObject.SetActive(true);
+        //FindObjectOfType<Player>().enabled = false; // Player is the class
+
+        Time.timeScale = 0f; // optional freeze every thing
+        AudioSource[] enemyAudioSources = FindObjectsOfType<AudioSource>();
+        foreach (AudioSource audio in enemyAudioSources)
+        {
+            if (audio.gameObject.CompareTag("Enemy"))
+            {
+                audio.Stop();
+            }
+        }
+
+        Time.timeScale = 0f;
     }
 
     public void RestartGame()
