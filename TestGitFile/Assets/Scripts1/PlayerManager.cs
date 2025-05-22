@@ -13,10 +13,15 @@ public class PlayerManager : MonoBehaviour
     public GameObject pauseMenuScreen;
     // public TextMeshProUGUI playerHPText;
     public TextMeshProUGUI gameOverText;
+    public TextMeshProUGUI scoreText;
+
+    private int score;
     // Start is called before the first frame update
     void Start()
     {
         isGameOver = false;
+        score = 0;
+        scoreText = "Score: " + score;
     }
 
     // Update is called once per frame
@@ -49,7 +54,7 @@ public class PlayerManager : MonoBehaviour
         //adding to do freeze of the logic player and sounds
         if (isGameOver) return;
         gameOverText.gameObject.SetActive(true);
-        //FindObjectOfType<Player>().enabled = false; // Player is the class
+        //xFindObjectOfType<Player>().enabled = false; // Player is the class
 
         Time.timeScale = 0f; // optional freeze every thing
         AudioSource[] enemyAudioSources = FindObjectsOfType<AudioSource>();
