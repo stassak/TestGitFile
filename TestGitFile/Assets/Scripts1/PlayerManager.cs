@@ -21,7 +21,7 @@ public class PlayerManager : MonoBehaviour
     {
         isGameOver = false;
         score = 0;
-        scoreText = "Score: " + score;
+        scoreText.text = "Score: " + score + "%";
     }
 
     // Update is called once per frame
